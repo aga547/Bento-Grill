@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bento Grill</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="background">
+    <!-- Flame and smoke overlays -->
+    <div class="flame-overlay"></div>
+    <div class="smoke-effect"></div>
+
+    <!-- Centered logo and slogan -->
+    <div class="center-content">
+      <img src="bento-logo.png" alt="Bento Grill logo" class="logo" />
+      <blockquote class="slogan">
+        experience The First Bento Test in Kurdistan With Bento Grill.
+      </blockquote>
+    </div>
+
+    <!-- Icon Controls -->
+    <div class="icon-bar">
+      <button class="icon-button" id="menuToggle">Menu 🍽️</button>
+      <button class="icon-button" id="infoToggle">Info ℹ️</button>
+    </div>
+
+    <!-- Hidden Menu -->
+    <nav class="menu-panel" id="menuPanel">
+      <ul>
+        <li><a href="#menu">Menu</a></li>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Info Modal -->
+    <div class="info-modal" id="infoModal">
+      <div class="info-content">
+        <span class="close" id="closeInfo">&times;</span>
+        <h2>About Bento Grill</h2>
+        <p>experience The First Bento Test in Kurdistan With Bento Grill.</p>
+      </div>
+    </div>
+  </header>
+
+  <main></main>
+  <footer></footer>
+
+  <script>
+    const menuToggle = document.getElementById('menuToggle');
+    const menuPanel = document.getElementById('menuPanel');
+    const infoToggle = document.getElementById('infoToggle');
+    const infoModal = document.getElementById('infoModal');
+    const closeInfo = document.getElementById('closeInfo');
+
+    menuToggle.addEventListener('click', () => {
+      menuPanel.style.display = menuPanel.style.display === 'block' ? 'none' : 'block';
+    });
+
+    infoToggle.addEventListener('click', () => {
+      infoModal.style.display = 'block';
+    });
+
+    closeInfo.addEventListener('click', () => {
+      infoModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (e) => {
+      if (e.target === infoModal) {
+        infoModal.style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>

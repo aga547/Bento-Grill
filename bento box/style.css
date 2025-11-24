@@ -1,0 +1,187 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Playfair Display', serif;
+  background-color: #1a1a1a;
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Background Image */
+.background {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('bento-kurdish-background.png') center center / cover no-repeat;
+  z-index: 0;
+}
+
+/* Flame Glow Overlay */
+.flame-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 40%;
+  background: radial-gradient(circle at bottom center, rgba(255, 100, 0, 0.3), transparent 70%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Smoke Layer */
+.smoke-effect {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('smoke.png') center bottom / cover no-repeat;
+  opacity: 0.15;
+  mix-blend-mode: screen;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Center Content */
+.center-content {
+  position: absolute;
+  top: 58%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
+
+/* Logo Styling */
+.logo {
+  width: 240px;
+  max-width: 100%;
+  margin-bottom: 20px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  box-shadow: 0 0 25px rgba(255, 140, 0, 0.4);
+  border: 2px solid rgba(255, 140, 0, 0.3);
+}
+
+/* Slogan Styling */
+.slogan {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #ffcc66;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 12px 24px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 0 20px rgba(255, 100, 0, 0.3);
+  letter-spacing: 0.5px;
+  line-height: 1.4;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Icon Buttons */
+.icon-bar {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 3;
+  display: flex;
+  gap: 12px;
+}
+
+.icon-button {
+  font-size: 1rem;
+  font-weight: bold;
+  background: linear-gradient(to right, #ff6600, #cc3300);
+  color: #fff;
+  border: none;
+  border-radius: 20px;
+  padding: 8px 16px;
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(255, 100, 0, 0.5);
+  transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.icon-button:hover {
+  background: linear-gradient(to right, #ff8533, #e64d00);
+  transform: scale(1.05);
+}
+
+/* Menu Panel */
+.menu-panel {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: rgba(0,0,0,0.85);
+  padding: 15px;
+  border-radius: 8px;
+  display: none;
+  z-index: 3;
+}
+
+.menu-panel ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-panel li {
+  margin: 10px 0;
+}
+
+.menu-panel a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Info Modal */
+.info-modal {
+  display: none;
+  position: fixed;
+  z-index: 4;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.7);
+}
+
+.info-content {
+  background: #222;
+  color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  .logo {
+    width: 180px;
+    padding: 12px;
+  }
+
+  .slogan {
+    font-size: 1.2rem;
+    padding: 10px 16px;
+  }
+
+  .icon-button {
+    font-size: 0.9rem;
+    padding: 6px 12px;
+  }
+}
